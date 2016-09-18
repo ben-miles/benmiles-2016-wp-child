@@ -1,0 +1,326 @@
+/*
+Theme Name: Ben Miles Portfolio
+Theme URI: http://www.bcgm3.com/
+Description: GK Portfolio Child Theme
+Author: Ben Miles
+Author URI: http://www.bcgm3.com/
+Template: gk-portfolio
+Version: 1.4.0
+Text Domain:benmiles
+*/
+
+/*---- Load GK Portfolio's Original Style Sheet ----*/
+@import url("../gk-portfolio/style.css");
+@import url("http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css");
+@import url("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css");
+
+/*---- Page ----*/
+#page {
+	padding: 0 !important;
+}
+
+.site-content.archive {
+	padding-bottom: 20px;
+}
+
+/*---- Header ----*/
+@-webkit-keyframes crawl{
+	from{background-position:0}
+	to{background-position:-1000px}
+}
+
+@-moz-keyframes crawl{
+	from{background-position:0}
+	to{background-position:-1000px}
+}
+
+@keyframes crawl{
+	from{background-position:0}
+	to{background-position:-1000px}
+}
+
+header.site-header {
+	background: url("images/header/rotator.php") top center repeat-x;
+	color: #000;
+	text-align: center;
+	-webkit-animation:crawl 100s linear infinite;
+	-moz-animation:crawl 100s linear infinite;
+	animation:crawl 100s linear infinite;
+}
+
+.site-header .home-link {
+	max-width: 256px;
+}
+
+/*---- Header: Search Bar ----*/
+form.search-topbar {
+	top: 22px;
+}
+
+input.search-topbar-field {
+	border: none;
+	border-radius: 4px;
+	text-indent: 0px;
+	height: 22px;
+	-webkit-box-shadow: 0 3px 5px 0 black;
+	-moz-box-shadow: 0 3px 5px 0 black;
+	box-shadow: 0 3px 5px 0 black;
+}
+
+.search-topbar:after {
+	top: 1px;
+	right: 5px;
+}
+
+/*---- Header: Social Menu ----*/
+.social-menu-topbar .menu-item {
+	opacity: 1.0;
+}
+
+.social-menu-topbar .menu-item::before {
+	color: white;
+	text-shadow: 0 3px 5px black;
+}
+
+.social-menu-topbar li,
+.social-menu-topbar li > a {
+	overflow: visible;
+}
+
+.social-menu-topbar li.fa-facebook:hover:before {
+	color: #3B5998;
+}
+
+.social-menu-topbar li.fa-twitter:hover:before {
+	color: #0084B4;
+}
+
+.social-menu-topbar li.fa-codepen:hover:before {
+	color: #191919;
+}
+
+.social-menu-topbar li.fa-github:hover:before {
+	color: #4078c0;
+}
+
+/*---- Navigation: Main ----*/
+nav.main-navigation {
+	padding: 40px 0;
+}
+
+/*---- Navigation: Paging ----*/
+.paging-navigation {
+	margin: 0;
+	padding: 20px 0;
+}
+
+/*---- Page Titles ----*/
+h1.archive-title, div.archive-meta, #post-2 > div > header > h1.entry-title {
+	display: none;
+}
+
+/*---- Search Results: Remove Giant In-Line Search Box ----*/
+article#gk-search {
+	display: none;
+}
+
+/*---- Portfolio Thumbnails ----*/
+.site-content.archive article {
+	height: 402px !important;
+	padding: 0 10px;
+}
+
+.post-preview {
+	/*background: transparent url("images/2px_45deg_white.png") top left repeat;*/
+	background: rgba( 255, 255, 255, 0.5 );
+}
+
+.post-preview > .entry-header,
+.post-preview > .entry-customfields,
+.post-preview > .entry-summary {
+	background-color: white;
+}
+
+.post-preview > .entry-header {
+	text-align: center;
+	font-weight: bold;
+	padding: 5px 10px;
+}
+
+.post-preview > .entry-header > h2.entry-title {
+	padding: 0px;
+}
+
+.post-preview > .entry-summary {
+	display: none;
+}
+
+.post-preview > .entry-customfields  {
+	padding: 0px;
+}
+
+.post-preview > .entry-customfields > .meta-meta {
+	text-align: center;
+}
+
+.post-preview > .entry-customfields > ul.post-meta {
+	list-style-type: none;
+	padding: 5px !important;
+	margin-top: 0px;
+}
+
+.post-preview > .entry-customfields > ul.post-meta > li > span.post-meta-key {
+	display: block;
+	width: 50px;
+	float: left;
+	text-align: right;
+	margin-right: 10px;
+	color: #363636;
+	text-decoration: underline;
+}
+
+.article-hover .post-image.el-transition-long.loaded {
+	-webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px)
+}
+
+/*---- Portfolio Pages ----*/
+body.single-post #primary {
+		margin-bottom:40px;
+}
+
+/*---- About ----*/
+#post-2 > div > div.entry-content {
+	padding-top: 0px !important;
+}
+
+/*---- About: Download Resume Button ----*/
+div#resume {
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+	border: 1px solid #545454;
+	background-color: #DBDBDB;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+div#resume h2 {
+	text-align: center;
+}
+
+div#resume h2:before {
+	content: url("images/pdf.png");
+	position: relative;
+	right: 6px;
+}
+
+/*---- About: Contact Form ----*/
+.wpcf7-form {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 400px;
+	background: #dbdbdb;
+	padding: 20px 30px 20px 30px;
+	border: 1px solid #545454 !important;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+.wpcf7-form h2 {
+	color: #545454;
+	padding: 0px;
+	display: block;
+	margin: 0px -30px 20px -30px;
+	text-align: center;
+}
+.wpcf7-form p {
+	margin: 0px;
+}
+.wpcf7-form label {
+	display: block;
+	margin-bottom: 20px !important;
+	text-align: right;
+}
+.wpcf7-text, .wpcf7-textarea {
+	border: none;
+	color: #525252;
+	height: 25px;
+	line-height: 15px;
+	margin: 0px 0px 0px 5px;
+	outline: 0 none;
+	padding: 5px;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	background: #FFF;
+	float: right;
+	width: 275px;
+}
+.wpcf7-textarea {
+	height: 100px;
+}
+.wpcf7-submit {
+	width:100%;
+	margin: 20px auto 0px !important;
+	background-color: #FFF !important;
+	border: 1px solid #545454;
+	color: #545454;
+	border-radius: 2px !important;
+	-moz-border-radius: 2px !important;
+	-webkit-border-radius: 2px !important;
+	font-weight: bold !important;
+}
+.wpcf7-submit:hover {
+	color: #333;
+	background-color: #EBEBEB !important;
+}
+
+.wpcf7-response-output {
+	background-color: #FFF;
+	margin: 0px auto !important;
+}
+
+/*---- Footer ----*/
+#gk-footer {
+	padding: 60px 0 60px 0;
+	max-width: none !important;
+  background-color: #545454;
+ }
+
+#gk-social { margin: 0; }
+
+#menu-social-1 {
+	height: 60px !important;
+	width: 340px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#menu-social-1 li,
+#menu-social-1 li > a {
+  display: inline-block;
+  opacity: 1;
+  margin: 0;
+  width: 80px;
+  height: 60px;
+  line-height: normal;
+  color: #FFFFFF;
+  top: -60px;
+}
+
+#menu-social-1 li:before {
+  font-size: 3em !important;
+  line-height: normal;
+  color: #FFFFFF;
+}
+
+#menu-social-1 li:before:hover {
+  color: #FFFFFF;
+}
