@@ -1,5 +1,5 @@
 # wp-childtheme-benmiles
-Ben Miles Portfolio is a WordPress childtheme of GK Portfolio. I created it for my personal use on http://www.ben-miles.com. GK Portfolio is an exceptional and free portfolio theme, but there were some features and style changes I wanted to add.
+Ben Miles Portfolio is a WordPress childtheme of GK Portfolio. I created it for my personal use on http://www.benmiles.com. GK Portfolio is an exceptional and free portfolio theme, but there were some features and style changes I wanted to add.
 
 Ben Miles Portfolio requires WordPress ( http://wordpress.org/ ) and the GK Portfolio theme ( https://wordpress.org/themes/gk-portfolio/ ).
 
