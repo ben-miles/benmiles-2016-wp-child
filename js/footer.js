@@ -24,7 +24,7 @@ jQuery( "#menu-social-1 .fa-codepen" ).mouseenter(function() {
 
 jQuery( "#menu-social-1 .fa-github" ).mouseenter(function() {
   jQuery( "#gk-footer" ).animate({
-		backgroundColor: "#4078c0;"
+		backgroundColor: "#6e5494;"
   }, 500 );
 });
 

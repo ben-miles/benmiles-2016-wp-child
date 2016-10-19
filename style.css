@@ -6,7 +6,7 @@ Author: Ben Miles
 Author URI: http://www.bcgm3.com/
 Template: gk-portfolio
 Version: 1.4.0
-Text Domain:benmiles
+Text Domain: benmiles
 */
 
 /*---- Load GK Portfolio's Original Style Sheet ----*/
@@ -100,7 +100,8 @@ input.search-topbar-field {
 }
 
 .social-menu-topbar li.fa-github:hover:before {
-	color: #4078c0;
+	/*color: #4078c0;*/ /*that blue i don't like*/
+	color: #6e5494;
 }
 
 /*---- Navigation: Main ----*/
@@ -115,7 +116,10 @@ nav.main-navigation {
 }
 
 /*---- Page Titles ----*/
-h1.archive-title, div.archive-meta, #post-2 > div > header > h1.entry-title {
+h1.archive-title,
+h1.page-title,
+div.archive-meta,
+#post-2 > div > header > h1.entry-title {
 	display: none;
 }
 
@@ -132,13 +136,18 @@ article#gk-search {
 
 .post-preview {
 	/*background: transparent url("images/2px_45deg_white.png") top left repeat;*/
-	background: rgba( 255, 255, 255, 0.5 );
+	/*background: rgba( 255, 255, 255, 0.5 );*/
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 60%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 60%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+	padding: 250px 36px 0px 36px !important; /* TODO: Make these values responsive */
 }
 
 .post-preview > .entry-header,
 .post-preview > .entry-customfields,
 .post-preview > .entry-summary {
-	background-color: white;
+	background-color: #ffffff;
 }
 
 .post-preview > .entry-header {
@@ -160,7 +169,8 @@ article#gk-search {
 }
 
 .post-preview > .entry-customfields > .meta-meta {
-	text-align: center;
+	text-align: justify;
+	line-height: 140%;
 }
 
 .post-preview > .entry-customfields > ul.post-meta {
