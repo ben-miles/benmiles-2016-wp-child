@@ -42,16 +42,18 @@ $post_preview_animation = get_theme_mod('portfolio_post_preview_animation', 'sli
 			<?php if(get_theme_mod('portfolio_show_excerpts', '1') == '1' || !has_post_thumbnail()) : ?>
 			<div class="post-preview transition animation <?php echo $post_preview_animation; ?>"<?php if(get_theme_mod('portfolio_whole_overlay_clickable', '1') == '1') : ?> data-url="<?php echo get_permalink(); ?>"<?php endif; ?>>
 				<?php get_template_part('content', 'header'); ?>
-				
+
 				<div class="entry-summary">
 					<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_excerpt(); ?></a>
 				</div><!-- .entry-summary -->
-				
+
 				<div class="entry-customfields">
-					<div class="meta-meta">Completed <?php echo get_the_date(); ?>. Filed under <?php echo the_category(', '); ?>.</div>
+					<div class="meta-meta">Completed <?php echo get_the_date(); ?>.</div>
+					<div class="meta-meta">Filed under <?php echo the_category(', '); ?>.</div>
 					<div class="meta-meta">Tasks: <?php echo get_post_meta($post->ID, 'Tasks', true); ?></div>
+					<div class="meta-meta">Tags: <?php echo get_the_tag_list('', ', '); ?></div>
 				</div><!-- .entry-customfields -->
-				
+
 			</div>
 			<?php else : ?>
 				<?php get_template_part('content', 'header-simple'); ?>
@@ -64,30 +66,30 @@ $post_preview_animation = get_theme_mod('portfolio_post_preview_animation', 'sli
 						echo $tag_list;
 					}
 				}
-				
+
 				if(get_theme_mod('portfolio_meta_type', 'tags') == 'categories') {
 					$categories_list = get_the_category_list(', </li><li>');
 					if ($categories_list) {
 						echo '<ul class="tags-links category-links"><li>' . $categories_list . '</li></ul>';
 					}
 				}
-				
+
 				if(get_theme_mod('portfolio_meta_type', 'tags') == 'title') {
 					$title = '<a href="'.get_permalink().'">' . get_the_title() . '</a>';
 					if ($title) {
 						echo '<ul class="tags-links title-links"><li>' . $title . '</li></ul>';
 					}
 				}
-				
+
 				if(get_theme_mod('portfolio_meta_type', 'tags') == 'date') {
-					$date_format = esc_html(get_the_date('M, j, Y'));  
-						
+					$date_format = esc_html(get_the_date('M, j, Y'));
+
 					if(get_theme_mod('portfolio_date_format', 'default') == 'wordpress') {
 						$date_format = get_the_date(get_option('date_format'));
 					}
-					
+
 					$date = sprintf( '<time datetime="'. esc_attr(get_the_date('c')) . '">'. $date_format .'</time>' );
-					
+
 					if ($date) {
 						echo '<ul class="tags-links date-links"><li>' . $date . '</li></ul>';
 					}
@@ -98,7 +100,7 @@ $post_preview_animation = get_theme_mod('portfolio_post_preview_animation', 'sli
 		<div class="entry-content">
 			<?php the_content(__('Read more', 'portfolio')); ?>
 			<?php wp_link_pages(array('before' => '<div class="page-links"><span class="page-links-title">' . __('Pages:', 'portfolio') . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>')); ?>
-						
+
 			<?php
 				$tag_list = get_the_tag_list('<ul class="tags-links"><li>',', </li><li>','</li></ul>');
 				if ($tag_list) {
